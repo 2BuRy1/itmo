@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wednesday>
+    <Lesson1>
+        <Name>Информатика(лекция)</Name>
+        <Time>8:20-9:50</Time>
+        <Week>Нечетная</Week>
+        <Corpus>ул.Ломоносова, д.9, лит.М</Corpus>
+        <Audience>Актовый зал</Audience>
+        <Teacher>Балакшин Павел Валерьевич</Teacher>
+        <Type>очно-дистанционный</Type>
+    </Lesson1>
+    <Lesson2>
+        <Name>Основы Профессиональной Деятельности(лекция)</Name>
+        <Time>10:00-11:30</Time>
+        <Week>нечетная</Week>
+        <Corpus>ул.Ломоносова, д.9, лит.М</Corpus>
+        <Audience>Актовый зал</Audience>
+        <Teacher>Клименков Сергей Викторович</Teacher>
+        <Type>Очно-дистанционный</Type>
+    </Lesson2>
+</Wednesday>
