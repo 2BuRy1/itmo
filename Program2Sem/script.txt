@@ -1,0 +1,4 @@
+show
+info
+execute_script a.txt
+execute_script script.txt
