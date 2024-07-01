@@ -1,0 +1,74 @@
+ORG 0x0 ;инициализация векторов прерывания
+V0: WORD $VEC1 
+WORD 0x180 
+V1: WORD $VEC2 
+WORD 0x180
+V2: WORD $DEFAULT 
+WORD 0x180
+V3: WORD $DEFAULT 
+WORD 0x180
+V4: WORD $DEFAULT
+WORD 0x180
+V5: WORD $DEFAULT
+WORD 0x180
+V6: WORD $DEFAULT 
+WORD 0x180
+V7: WORD $DEFAULT
+WORD 0x180
+
+DEFAULT: IRET ;обработка прерываний ву, которые нам не нужны
+
+
+ORG 0x1B
+XNUM : WORD 0 
+MAX: WORD 0x0043
+MIN: WORD 0xFFC4
+
+START: CLA
+OUT 7
+OUT 0xB 
+OUT 0xE 
+OUT 0x12 
+OUT 0x16
+OUT 0x1A 
+OUT 0x1E
+
+LD #0x8 ;устанавливаем вектор V0 на ВУ1 
+OUT 3
+LD #0x9 ;устанавливаем вектор V1 на ВУ2 
+OUT 5 
+
+CLA 
+MAIN: 
+DI
+LD XNUM 
+SUB #0x2
+CMP MAX 
+BGE ODZ 
+CMP MIN
+BLT ODZ
+ST XNUM
+EI
+NOP
+JUMP MAIN
+
+ODZ: LD MAX 
+ST XNUM 
+NOP
+JUMP MAIN
+
+VEC1: 
+LD XNUM 
+ASL 
+SUB #0x8
+OUT 2
+NOP
+IRET
+
+VEC2:
+CLA 
+IN 4
+AND XNUM 
+ST XNUM
+NOP
+IRET
