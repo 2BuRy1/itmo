@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="proglab5:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/proglab5_jar</output-path>
+    <root id="archive" name="Лабораторная№5.jar">
+      <element id="module-output" name="Лабораторная№5" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/xom-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/jdom-1.1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/stax-1.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/dom4j-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/jdom2-2.0.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/jettison-1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/jmh-core-1.21.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/migbase64-2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/stax2-api-4.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/jaxb-api-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/mxparser-1.2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/stax-api-1.0.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/xstream-1.4.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/jopt-simple-4.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/kxml2-min-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/xmlpull-1.1.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/xpp3_min-1.1.4c.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/commons-math3-3.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/commons-codec-1.10.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/xstream-jmh-1.4.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/woodstox-core-5.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/XMLmodule/javax.activation-api-1.2.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

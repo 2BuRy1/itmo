@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" style="-fx-background-color: #F6F5F2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proglab8.LoginWindow">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3d0d7" height="90.0" stroke="BLACK" strokeType="INSIDE" width="400.0" />
+      <Text layoutX="189.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField fx:id="Logintitle" alignment="CENTER" editable="false" focusTraversable="false" layoutX="117.0" layoutY="39.0" style="-fx-background-color: #F0EBE3; -fx-border-radius: 20px;" text="%Login_Field">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="LoginField" layoutX="126.0" layoutY="141.0" promptText="%Login_Field" />
+      <Button id="1" fx:id="RegisterButton" ellipsisString="" layoutX="321.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="%Register_Button" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="PasswordField" layoutX="125.0" layoutY="187.0" promptText="%Password_Field" />
+      <Button id="1" fx:id="LoginButton" ellipsisString="" layoutX="168.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="%Login_button" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="Russian" layoutX="353.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="Ru" />
+      <Button fx:id="Es" layoutX="353.0" layoutY="135.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="Es" />
+      <Button fx:id="Islandian" layoutX="353.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="Isl" />
+      <Button fx:id="English" layoutX="353.0" layoutY="200.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="33.0" text="En" />
+   </children>
+</AnchorPane>
