@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="601.0" style="-fx-background-color: #F6F5F2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proglab8.MainPage">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3d0d7" height="97.0" stroke="BLACK" strokeType="INSIDE" width="601.0" />
+      <Text layoutX="189.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField fx:id="UserField" editable="false" focusTraversable="false" layoutX="435.0" layoutY="18.0" />
+      <MenuButton fx:id="Menu" layoutX="7.0" layoutY="6.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888;" text="Menu" textOverrun="WORD_ELLIPSIS">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Commands" />
+          <MenuItem mnemonicParsing="false" text="Tables" />
+        </items>
+         <font>
+            <Font name="System Italic" size="9.0" />
+         </font>
+      </MenuButton>
+   </children>
+</AnchorPane>

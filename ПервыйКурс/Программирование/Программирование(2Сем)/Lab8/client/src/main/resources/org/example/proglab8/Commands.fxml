@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="321.0" prefWidth="349.0" style="-fx-background-color: #F6F5F2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.proglab8.Commands">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3d0d7" height="87.0" layoutX="-3.0" layoutY="-10.0" stroke="BLACK" strokeType="INSIDE" width="355.0" />
+      <Text layoutX="189.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button id="1" fx:id="Add" ellipsisString="" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Add" textAlignment="CENTER" textFill="#0f0f0f">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Remove" ellipsisString="" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Remove" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Update" ellipsisString="" layoutX="14.0" layoutY="169.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Update" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Max_by_chapter" ellipsisString="" layoutX="14.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Max_By_Chapter" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="PrintField" ellipsisString="" layoutX="246.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="PrintField" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Help" ellipsisString="" layoutX="246.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Help" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Info" ellipsisString="" layoutX="246.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Info" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Sort" ellipsisString="" layoutX="246.0" layoutY="169.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Sort" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="Exit" ellipsisString="" layoutX="139.0" layoutY="102.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Exit" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button id="1" fx:id="AddifMin" ellipsisString="" layoutX="139.0" layoutY="203.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="AddIfMin" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <TextField alignment="CENTER" editable="false" focusTraversable="false" layoutX="87.0" layoutY="17.0" prefHeight="39.0" prefWidth="185.0" promptText="Commands" text="Commands">
+         <font>
+            <Font name="Bell MT Italic" size="13.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="ServerResponnse" editable="false" focusTraversable="false" layoutX="3.0" layoutY="228.0" prefHeight="87.0" prefWidth="343.0" style="-fx-background-color: #F6F5F2;" />
+      <Button id="1" fx:id="Clear" ellipsisString="" layoutX="139.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-border-radius: 10px; -fx-border-color: #888888; -fx-background-color: #FFEFEF;" text="Clear" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
