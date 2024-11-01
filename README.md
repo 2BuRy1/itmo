@@ -29,5 +29,5 @@
 
 <br>
 
-### ***[Герардас гера гера](https://github.com/GeruniaSun)
+### ***[Герардас гера гера](https://github.com/GeruniaSun)***
 > Прод мат butt flex енджойер
