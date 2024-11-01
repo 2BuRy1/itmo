@@ -17,5 +17,5 @@
 > Фронт-Психопат
 
 
-### *** [Даня Чими-Чими](https://github.com/deadxraver)*** 
+### ***[Даня Чими-Чими](https://github.com/deadxraver)*** 
 > Лучший человек земли - джава SE senior
