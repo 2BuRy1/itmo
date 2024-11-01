@@ -12,5 +12,5 @@
 [Артем Дабстеп DIY](https://github.com/senya-2011])
 > Не ну реально профи  
   <br>
-[Сантьягоу Откисучи](https://github.com/naku0])
+![Сантьягоу Откисучи](https://github.com/naku0)
 > Фронт-Психопат
