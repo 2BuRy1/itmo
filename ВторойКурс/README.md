@@ -1,4 +1,4 @@
-# Этап втоой 
+# Этап второй 
 **Осознание**
 <br>  
 ![Сатору](https://c.tenor.com/FH12KSbsscoAAAAd/tenor.gif)
