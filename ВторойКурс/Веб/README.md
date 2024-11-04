@@ -2,7 +2,7 @@
 ***Вот так*** <br>
 <br>
 <br>  
-![Toji](https://c.tenor.com/UxR3AYPLrHEAAAAd/tenor.gif)
+![пусси]([https://c.tenor.com/UxR3AYPLrHEAAAAd/tenor.gif](https://c.tenor.com/k-7kxP8Q7SkAAAAd/tenor.gif))
 <br>  
 
 
