@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fractals</title>
+</head>
+<body>
+<header>
+ 
+</header>
+    <main>
+        <div class="relative w-full max-w-lg">
+            <!-- <div class="blurred-circle"></div>
+            <div class="blurred-circle2"></div> -->
+        </div>
+        <div id="row">
+            <div class="blurred-circle"></div>
+            <div class="blurred-circle2"></div>
+            <div class="mandelbrot">
+            <canvas height="450" width="400" id="mandelbrotCanvas"></canvas>
+            <h1>Множество Мандельброта</h1>
+                <label>Масштаб: <input type="range" id="zoom4Mandelbrot" min="1" max="500" value="1"></label>
+                <label>Количество итераций: <input type="range" id="iter4Mandelbrot" min="50" max="1000" step="50" value="100"></label>
+            </div>
+            <div class="julia">
+                <canvas id="juliaCanvas" height="450" width="400"></canvas>
+                <h1>Множество Жюлиа</h1>
+                <label>Параметр C (X): <input type="range" id="cXSlider" min="-1" max="1" step="0.01" value="-0.5251993"></label>
+                <label>Параметр C (Y): <input type="range" id="cYSlider" min="-1" max="1" step="0.01" value="0.5251993"></label>
+                <label>Количество итераций: <input type="range" id="iterSlider" min="50" max="1000" step="50" value="500"></label>
+            </div>
+            <div class="burning_ship">
+                <canvas height="450" width="400" id="burning_shipCanvas"></canvas>
+                <h1>Горящий корабль</h1>
+                <label>Количество итераций: <input type="range" id="burniterSlider" min="200" max="1000" step="50" value="200"></label>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <h1 class="title">Лабораторная работа: Построение и визуализация фрактальных множеств</h1>
+            </div>
+            <div id = "namesContainer">
+                <h1 class="names">Федоров Евгений </h1>
+                <h1 class="names">Черепанов Иван </h1>
+                <h1 class="names">Ташкинова Татьяна</h1>
+            </div>
+        </footer>
+    </main>
+<script src="mandelbrot.js"></script>
+<script src="julia.js"></script>
+<script src="burning_ship.js"></script>
+</body>
+</html>
