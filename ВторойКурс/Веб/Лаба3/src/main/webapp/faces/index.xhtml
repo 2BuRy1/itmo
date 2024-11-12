@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <meta charset="UTF-8"/>
+   <title>LABA</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+   <link rel="preconnect" href="https://fonts.gstatic.com"/>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: "Pixelify Sans", sans-serif;
+      }
+
+      body {
+         height: 100vh;
+         background-color: #ffe5ec;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      header {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         grid-template-rows: repeat(3, 1fr);
+         gap: 10px;
+         text-align: center;
+         background-color: #ffd3e4;
+         padding: 30px;
+         border-radius: 15px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+         color: #333;
+         font-size: 1.5rem;
+      }
+
+      .credits, .group, .id {
+         font-weight: bold;
+      }
+
+      .time {
+         grid-row: 3;
+         grid-column: 2;
+         font-size: 1.2rem;
+         color: #ff1493;
+         font-weight: bold;
+      }
+
+      .time span {
+         display: inline-block;
+         padding: 5px 10px;
+         background: #fff;
+         border-radius: 10px;
+         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .link-to-main-page {
+         grid-row: 3;
+         grid-column: 3;
+         padding: 10px 20px;
+         background-color: #ff1493;
+         color: #fff;
+         text-decoration: none;
+         border-radius: 10px;
+         font-size: 1rem;
+         font-weight: bold;
+         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+         transition: background-color 0.3s ease;
+         text-align: center;
+      }
+
+      .link-to-main-page:hover {
+         background-color: #e01384;
+      }
+   </style>
+</h:head>
+
+<h:body>
+   <header>
+      <h1 class="credits">ФИО</h1>
+      <h1 class="group">ГРУППА</h1>
+      <h1 class="id">ВАРИАНТ</h1>
+      <h1 class="credits">Федоров Евгений Константинович</h1>
+      <h1 class="group">P3210</h1>
+      <h1 class="id">8775</h1>
+      <div class="time" id="time">
+         <span>Загрузка...</span>
+      </div>
+      <h:link styleClass="link-to-main-page" value="Главная страница" outcome="main" />
+   </header>
+
+ <script src="../js/time.js"></script>
+</h:body>
+</html>

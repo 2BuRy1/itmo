@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+
+  it-mo:
+
+volumes:
+  pgdata:
+
+services:
+  database:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydb
+    networks:
+      - it-mo
+
+
+  wildfly:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8080"
+      - "9990:9990"
+    environment:
+      - POSTGRESQL_USER=postgres
+      - POSTGRESQL_PASSWORD=postgres
+      - POSTGRESQL_DATABASE=mydb
+    depends_on:
+      - database
+    networks:
+      - it-mo

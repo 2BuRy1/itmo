@@ -1,0 +1,15 @@
+<datasources xmlns="urn:jboss:domain:datasources:5.0">
+    <datasource jndi-name="java:/jdbc/PostgresDS" pool-name="PostgresDS" enabled="true" use-java-context="true">
+        <connection-url>jdbc:postgresql://database:5432/mydb</connection-url>
+        <driver>postgresql-42.7.4.jar</driver>
+        <security>
+            <user-name>postgres</user-name>
+            <password>postgres</password>
+        </security>
+    </datasource>
+    <drivers>
+        <driver name="postgresql" module="org.postgresql">
+            <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+        </driver>
+    </drivers>
+</datasources>
