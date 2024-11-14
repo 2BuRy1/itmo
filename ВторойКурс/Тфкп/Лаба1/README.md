@@ -1,6 +1,8 @@
 # ***Первая лабораторная работа по ТФКП*** 
 
-**In coloboration with:** 
+## **In coloboration with:** 
+
+<br>
 
 ### ***[Ташкинова Татьяна](https://github.com/stepppmum)***
 
