@@ -39,7 +39,7 @@
 
 <br> 
 
-### ***[Ванеш]([https://github.com/Kivicol](https://github.com/Vaneshik/VT-Labs))***
+### ***[Ванеш](https://github.com/Vaneshik/VT-Labs)***
 > Дальневосточная секс-пропоганда
 
 <br>
