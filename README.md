@@ -37,3 +37,9 @@
 ### ***[Киви](https://github.com/Kivicol)***
 > Создатель самых крутых мемов и видосов эвер(немного программист)
 
+<br> 
+
+### ***[Ванеш]([https://github.com/Kivicol](https://github.com/Vaneshik/VT-Labs))***
+> Дальневосточная секс-пропоганда
+
+<br>
