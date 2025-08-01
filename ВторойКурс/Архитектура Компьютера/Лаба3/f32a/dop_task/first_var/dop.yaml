@@ -1,0 +1,13 @@
+name: assert upper_case_pstr('1234567890123456789012345678901\n23') == ('1234567890123456789012345678901', '23')
+# and mem[0..31]: 1f 31 32 33 34 35 36 37 38 39 30 31 32 33 34 35 36 37 38 39 30 31 32 33 34 35 36 37 38 39 30 31
+limit: 2000
+memory_size: 0x1000
+input_streams:
+  0x80: []
+  0x84: []
+reports:
+  - name: Check results
+    slice: last
+    view: |
+      numio[0x84]: {io:0x84:dec}
+    assert: |

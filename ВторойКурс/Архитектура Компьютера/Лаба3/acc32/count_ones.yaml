@@ -1,0 +1,19 @@
+name: count_ones
+limit: 1000
+memory_size: 0x2000
+input_streams:
+  0x80: [-1]
+  0x84: []
+reports:
+  - name: Step-by-step log
+    slice: all
+    view: |
+      {pc}:     {instruction}   {pc:label}
+  - name: Result
+    slice: last
+    view: |
+      numio[0x80]: {io:0x80:hex}
+      numio[0x84]: {io:0x84:dec}
+    assert: |
+      numio[0x80]: [] >>> []
+      numio[0x84]: [] >>> [32]

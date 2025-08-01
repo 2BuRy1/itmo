@@ -1,0 +1,3 @@
+/Users/montana/MyLabs/Yap's/assignment-3-image-transform/solution/cmake-build-debug/CMakeFiles/image-transform.dir
+/Users/montana/MyLabs/Yap's/assignment-3-image-transform/solution/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/montana/MyLabs/Yap's/assignment-3-image-transform/solution/cmake-build-debug/CMakeFiles/rebuild_cache.dir

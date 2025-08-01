@@ -1,0 +1,407 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --white: #F5F6F4;
+    --blackedWhite: #F0F2EE
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+   display: flex;
+    background-color: var(--white);
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.authInputs{
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: .3rem;
+}
+
+.registration{
+    width: 40rem;
+    background-color: var(--blackedWhite);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    place-items: center;
+}
+
+#registerButton:hover{
+    cursor: pointer;
+
+}
+
+
+#registerButton{
+    width: 34%;
+    margin-bottom: .7rem;
+}
+
+.authentication{
+    width: 40rem;
+    background-color: var(--blackedWhite);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    place-items: center;
+
+}
+
+main{
+    width: auto;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    align-items: center;
+    align-content: center;
+    place-content: center;
+
+}
+
+.variables{
+    border: 1px solid black;
+    border-radius: 40px;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    width: 40%;
+    justify-content: center;
+    place-items: center;
+    margin: 4rem;
+}
+
+.xSelection{
+    display: grid;
+    height: auto;
+    width: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.xButtons{
+    margin: .5rem;
+    font-size: 1rem;
+
+}
+
+.ySelection{
+    margin: 1rem;
+}
+
+#yInput{
+    font-size: 1rem;
+    border: .5px solid black;
+    border-radius: 10px;
+}
+
+.rSelection{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.rButtons{
+    margin: .5rem;
+    font-size: 1rem;
+    width: 1.7rem;
+}
+
+
+.canvasSelection{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+
+#root{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    place-content: center;
+    place-items: center ;
+}
+
+#canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Базовый canvas будет под другим */
+    width: 100%;
+    height: 100%;
+}
+
+
+.registerNavigate{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    #flex-wrap: wrap;
+    justify-content: flex-end;
+
+}
+
+.authNavigate{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.authenticationContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: flex-start;
+
+}
+
+
+#toRegisterButton{
+    height: 2rem;
+    width: 10rem;
+}
+
+#toAuthButton{
+    height: 2rem;
+    width: 10rem;
+}
+
+
+.registrationContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: flex-start;
+
+}
+
+.is-invalid{
+    border-color: red;
+}
+
+.invalidY{
+    font-size: 100px;
+}
+
+.canvasSelection {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+.sendButton{
+   position: revert;
+}
+
+#dotsCanvas{
+    border: 2px solid pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+}
+.mainPage{
+    height: 100%;
+    width: 100%;
+}
+
+.pointsSection{
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.selection-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.xSelection h3,
+.ySelection h3,
+.rSelection h3 {
+    margin-top: 1rem;
+}
+
+.mainHeader{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+}
+
+.pointsSection{
+    height: 100px;
+    max-height: 10rem;
+    overflow: scroll;
+}
+
+.points-table {
+    width: 20%;
+    height: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.points-table th, .points-table td {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+
+.points-table td{
+    border-radius: 15px;
+}
+
+.points-table thead {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.points-table .hit {
+    background-color: #d4edda;
+}
+
+.points-table .miss {
+    background-color: #f8d7da;
+}
+
+
+@media (max-width: 1202px) and (min-width: 725px) {
+    .authentication, .registration {
+        width: 70%;
+    }
+
+
+
+    .variables {
+
+        width: 50%;
+        margin: 0;
+    }
+
+    .canvasSelection{
+        margin: 1rem;
+        aspect-ratio: 1;
+    }
+
+    .ySelection{
+        width: auto;
+        margin: 0;
+    }
+
+    #yInput{
+        width: 5rem;
+    }
+
+    .canvasSelection{
+        margin: 1rem;
+        height: 500px;
+        width: 500px;
+    }
+
+    .pointsSection{
+        margin-top: 1rem;
+
+    }
+
+
+    .xSelection{
+        display: flex;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .xButtons{
+    }
+
+
+}
+
+@media (max-width: 725px) {
+    .authentication, .registration {
+        width: 90%;
+    }
+
+
+    #yInput{
+        width: 5rem;
+    }
+
+    html, body{
+        height: fit-content;
+    }
+
+    .canvasSelection{
+        height: 500px;
+        width: 500px;
+    }
+
+    main {
+        flex-direction: column;
+
+    }
+
+    .variables {
+        width: 90%;
+        margin: 2rem 0;
+    }
+
+    .authNavigate, .registerNavigate {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    #toRegisterButton, #toAuthButton {
+        width: 100%;
+    }
+
+    #registerButton {
+        width: 100%;
+    }
+
+    .points-table {
+        width: 100%;
+    }
+}
