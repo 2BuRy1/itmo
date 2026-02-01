@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="services.AreaCheckerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-04-21T07:07:16.662Z" hostname="MacBook-Air-Evgeniy.local" time="0.002">
+  <properties/>
+  <testcase name="checkIfNotInTheSpot" classname="services.AreaCheckerTest" time="0.002"/>
+  <testcase name="checkIfInTheSpot" classname="services.AreaCheckerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

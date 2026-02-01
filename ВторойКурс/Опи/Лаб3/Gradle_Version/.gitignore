@@ -1,0 +1,7 @@
+./build/*
+./target/*
+./*.jar
+.idea
+.idea/*
+.gradle
+.gradle/*

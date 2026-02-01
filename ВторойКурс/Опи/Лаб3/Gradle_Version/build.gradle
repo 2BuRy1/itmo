@@ -1,0 +1,298 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets.main.resources.srcDirs = ['src/main/resources']
+
+java{
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+dependencies {
+    implementation("org.postgresql:postgresql:42.7.3")
+    implementation("org.springframework.boot:spring-boot-starter-web:3.2.4")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.2.4")
+    implementation("org.springframework.boot:spring-boot-starter-security:3.2.4")
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    implementation("io.jsonwebtoken:jjwt-impl:0.11.5")
+    implementation("io.jsonwebtoken:jjwt-jackson:0.11.5")
+    implementation("org.projectlombok:lombok:+")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.4")
+    testImplementation("junit:junit:4.13.2")
+
+}
+    tasks.register("compile"){
+    dependsOn(classes)
+}
+
+
+
+tasks.register('playMusic', JavaExec) {
+    group = 'custom'
+    description = 'Play music using MusicPlayer class'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass.set('itmo.lab.web4.music.MusicPlayer') 
+    args = ['src/main/resources/gaiti.wav'] 
+}
+
+tasks.register('native2ascii') {
+    inputs.dir("src/main/resources")
+    outputs.dir(layout.buildDirectory.dir("asciiResources"))
+    doLast {
+        def inputDir = file("src/main/resources")
+        def outputDir = new File("${project.buildDir}/asciiResources")
+        println "Converting .properties files from ${inputDir}..."
+        fileTree(inputDir).matching { include '**/*.properties' }.each { inputFile ->
+            def relativePath = inputDir.toPath().relativize(inputFile.toPath()).toString()
+            def outputFile = new File(outputDir, relativePath)
+            outputFile.parentFile.mkdirs()
+            outputFile.withWriter('ASCII') { writer ->
+                inputFile.eachLine { line ->
+                    def convertedLine = line.collect { ch ->
+                        ch <= 127 ? ch : String.format("\\u%04x", (int) ch)
+                    }.join('')
+                    writer.writeLine(convertedLine)
+                }
+            }
+            println "${inputFile.name} -> ${outputFile.name}"
+        }
+        println "Output dir: ${outputDir}"
+    }
+}
+
+import javax.xml.parsers.DocumentBuilderFactory
+import org.xml.sax.SAXException
+tasks.register('xml') {
+    def projectRoot = project.projectDir
+    inputs.dir(projectRoot)
+    doLast {
+        def factory = DocumentBuilderFactory.newInstance()
+        def parser = factory.newDocumentBuilder()
+        println "Validating all XML files in ${projectRoot}..."
+        def invalidFiles = []
+        fileTree(projectRoot).matching { include '**/*.xml' }.each { file ->
+            def relativePath = file.absolutePath.replace(projectRoot.absolutePath + File.separator, "")
+            try {
+                parser.parse(file)
+                println "Valid XML: ${relativePath}"
+            } catch (SAXException e) {
+                println "Invalid XML: ${relativePath} - ${e.message}"
+                invalidFiles << file
+            } catch (Exception e) {
+                println "Error reading file: ${relativePath} - ${e.message}"
+                invalidFiles << file
+            }
+        }
+        if (!invalidFiles.isEmpty()) {
+            throw new GradleException("XML validation failed for ${invalidFiles.size()} file(s).")
+        }
+        println "All XML files are valid"
+    }
+
+
+}
+
+
+tasks.register('alt') {
+    doLast {
+        def sourceDir = file("src/main/java")
+
+        fileTree(sourceDir).matching {
+            include '**/*.java'
+        }.each { file ->
+            def text = file.text
+
+            text = text.replaceAll('Bearer ', 'Meower')
+
+            file.write(text)
+        }
+    }
+    tasks.alt.finalizedBy(tasks.build.configure {
+        tasks.'jar'.archiveFileName = 'alt.jar'
+    })
+}
+
+
+
+tasks.register('env', Jar) {
+    group = 'build'
+    description = 'Build the JAR with custom environment settings from env.properties'
+
+
+
+
+    def envFile = file("env.properties")
+    onlyIf {
+        file("env.properties").exists()
+    }
+    def props = new Properties()
+    envFile.withInputStream { props.load(it) }
+    def mainClassName = props.getProperty("main.class")
+    if (!mainClassName) {
+        throw new GradleException("'main.class' is missing in env.properties")
+    }
+    println "Main Class: ${mainClassName}"
+    archiveBaseName.set('Mama')
+
+    from sourceSets.main.output
+
+    from configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes(
+                'Main-Class': mainClassName
+        )
+    }
+}
+
+
+
+tasks.register('mkRevDir').configure {
+    mkdir("${revisionsDirRevision1Src}")
+    mkdir("${revisionsDirRevision2Src}")
+    mkdir("${dist}")
+}
+
+
+
+tasks.register('loadRev1', Exec){
+    commandLine 'svn', 'checkout', '--revision', '3', "${localSvnRepo}/branches/first_branch", "${revisionsDirRevision1Src}"
+
+}
+
+tasks.register('loadRev2', Exec) {
+    commandLine 'svn', 'checkout', '--revision', '4', "${localSvnRepo}/branches/first_branch", "${revisionsDirRevision2Src}"
+
+}
+
+
+tasks.register('loadRevs'){
+    dependsOn(loadRev1, loadRev2)
+}
+
+
+tasks.register('buildRev1', Exec) {
+    dependsOn loadRev1
+    workingDir revisionsDirRevision1Src
+    commandLine "${rootProject.projectDir}/gradlew", 'jar'
+
+    doFirst {
+
+        copy {
+            from "${rootProject.projectDir}/build.gradle"
+            into workingDir
+        }
+
+        copy {
+            from "${rootProject.projectDir}/settings.gradle"
+            into workingDir
+        }
+
+        def envFile = new File("${workingDir}/env.properties")
+        if (!envFile.exists()) {
+            envFile.createNewFile()
+            envFile.text = """
+main.class=A
+"""
+        }
+    }
+}
+tasks.register('buildRev2', Exec) {
+    dependsOn loadRev2
+    workingDir revisionsDirRevision2Src
+    commandLine "${rootProject.projectDir}/gradlew", 'jar'
+
+
+    doFirst {
+        copy {
+            from "${rootProject.projectDir}/build.gradle"
+            into workingDir
+        }
+
+        copy {
+            from "${rootProject.projectDir}/settings.gradle"
+            into workingDir
+        }
+
+
+    }
+
+    def envFile = new File("${workingDir}/env.properties")
+    if (!envFile.exists()) {
+        envFile.createNewFile()
+        envFile.text = """
+main.class=A
+"""
+
+    }
+}
+
+
+
+tasks.register('packageRevs', Zip) {
+    dependsOn(tasks.buildRev1, tasks.buildRev2)
+
+    archiveFileName = "revisions_archive.zip"
+    destinationDirectory = file("${dist}")
+
+    from("${revisionsDirRevision1Src}/build/libs") {
+        include '*.jar'
+        rename { "revision1_${it}" }
+    }
+
+    from("${revisionsDirRevision2Src}/build/libs") {
+        include '*.jar'
+        rename { "revision2_${it}" }
+    }
+
+    doLast {
+        println "ZIP-архив с ревизиями создан: ${archiveFile.get()}"
+    }
+}
+
+tasks.register('team') {
+    dependsOn(tasks.mkRevDir, tasks.loadRevs, tasks.packageRevs)
+
+    doLast {
+        def zipFile = file("dist/revisions_archive.zip")
+        if (zipFile.exists()) {
+            println "Сборка завершена. Результаты:"
+            println "1. JAR ревизии 1: ${revisionsDirRevision1Src}/build/libs/*.jar"
+            println "2. JAR ревизии 2: ${revisionsDirRevision2Src}/build/libs/*.jar"
+            println "3. ZIP архив: ${zipFile.absolutePath}"
+        } else {
+            throw new GradleException("Не удалось создать ZIP архив с ревизиями")
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+tasks.named('build'){
+    dependsOn(tasks.bootJar)
+}
+
+
+clean.doFirst {
+    delete "${revisionsDir}"
+    delete "./build"
+    delete "${dist}"
+}
