@@ -1,6 +1,6 @@
 # Этап третий
 **Усталость**
 <br>  
-![Нанами](https://c.tenor.com/C_mGAA7yZOwAAAAC/tenor.gif)
+![Нанами](https://c.tenor.com/BdGD-9L3xOkAAAAd/tenor.gif)
 <br>  
 ## Дойти до конца
